@@ -21,16 +21,17 @@ void loop() {
   // --------------------------------------------------
   Serial.println("Spinning Clockwise...");
   digitalWrite(dirPin, HIGH); // Set direction to Clockwise
+  int t=1000;
   
   // Loop 2048 times to complete one full revolution
   for(int x = 0; x < stepsPerRevolution; x++) {
     digitalWrite(stepPin, HIGH);
-    delayMicroseconds(1000);    // Wait 2 milliseconds (Speed control)
+    delayMicroseconds(t);    // Wait 2 milliseconds (Speed control)
     digitalWrite(stepPin, LOW);
-    delayMicroseconds(1000);    // Wait 2 milliseconds
+    delayMicroseconds(t);    // Wait 2 milliseconds
   }
   
-  delay(1000); // Wait for 1 second
+  delay(800); // Wait for 1 second
 
   // --------------------------------------------------
   // 2. Spin Counter-Clockwise
@@ -40,9 +41,9 @@ void loop() {
   
   for(int x = 0; x < stepsPerRevolution; x++) {
     digitalWrite(stepPin, HIGH);
-    delayMicroseconds(1000); 
+    delayMicroseconds(t); 
     digitalWrite(stepPin, LOW);
-    delayMicroseconds(1000); 
+    delayMicroseconds(t); 
   }
   
   delay(1000); // Wait for 1 second before repeating the loop
