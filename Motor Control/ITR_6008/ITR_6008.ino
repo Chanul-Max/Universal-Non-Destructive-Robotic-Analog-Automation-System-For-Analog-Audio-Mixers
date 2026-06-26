@@ -1,4 +1,4 @@
-#define ITR_PIN A1
+#define ITR_PIN A0
 
 
 void setup() {
